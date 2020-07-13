@@ -1,0 +1,26 @@
+DFS Backtracking problem:
+
+We have a map defined by a 2D array of 0's and 1's, where 0 denotes an obstacle (We cant go there) and 1 denotes free path. We need to go from an initial position to our destination while avoiding the obstacles. Our agent can move up,down,left or right from its position and if it encounters an obstacle it returns to its previous position and looks for other paths. 
+
+
+We give our input as the initial starting points and the destination points. This points are sent to another function (S_D) which calls the recursive function for DFS backtracking.
+
+We have defined a boolean recursive function for using DFS backtracking (S_D_func). This function takes the input points and checks whether we are at our destination or not, if not it keeps on going left, right, up or down recursively till we reach our destination, when it returns 'true', hence ending the recursive loop and gives us the solution.
+
+We have defined a boolean array 'visited' which ensures that we dont revisit already visited points and get stuck in an infinite loop. The function 'IsSafe' ensures that the given point we are visiting is within bounds, not an obstacle and not visited.
+
+vectors pos1,pos2 and the strong path are used to store the position of the points we visit and the direction we move in to reach the destination.
+
+example Output:
+
+Enter starting points x and y:
+0
+0
+Enter destination:
+2
+2
+
+Final solution path to destination:
+
+(0,0,D)-->(1,0,D)-->(2,0,R)-->(2,1,R)-->(2,2,F)
+
